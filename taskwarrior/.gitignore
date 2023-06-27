@@ -1,0 +1,5 @@
+# .gitignore Taskwarrior data and keys
+data/*
+
+## keep hooks
+!data/hooks
