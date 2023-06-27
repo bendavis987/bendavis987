@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.dotfiles/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +71,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
+plugins=(tmux) 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -97,16 +97,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias cddotfiles="cd ~/.dotfiles/Ubuntu/"
-alias cdnotes="cd $nvim"
+# alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias p="sudo pacman"
+alias tmuxsource="tmux source-file ~/.config/tmux/tmux.conf"
+# tmux
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_CONFIG='$HOME/.config/tmux/tmux.conf'
+ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_DEFAULT_SESSION_NAME=starchy
+ZSH_TMUX_FIXTERM=true
 
-# Aliases to connect to frequent tmux sessions
-alias sshtwar="ssh -t dev@192.168.0.135 tmux attach -t twarrior"
-alias sshdev="ssh -t dev@192.168.0.135 tmux attach -t dev"
 
-# Environment Variables for moving configurations
-## Taskwarrior
-export TASKRC=~/.config/taskwarrior/taskwarrior.cfg
-export TASKDATA=~/.config/taskwarrior/data
+# startup commands
+curl "wttr.in/PGH?u0FAQ"
