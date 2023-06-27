@@ -1,0 +1,5 @@
+# .gitignore file - .dotfiles
+
+## Ignore .oh-my-zsh - except custom folder
+.oh-my-zsh/*
+!.oh-my-zsh/custom/
