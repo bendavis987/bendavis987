@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,10 +97,19 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias p="sudo pacman"
 alias tmuxsource="tmux source-file ~/.config/tmux/tmux.conf"
+
+# aliases for tmux sessions
+alias sshtwar="ssh -t dev@192.168.0.135 tmux attach -t twarrior"
+alias sshddev="ssh -t dev@192.168.0.135 tmux attach -t dev"
+
+# aliases for moving configurations
+export TASKRC=~/.config/taskwarrior/taskwarrior.cfg
+export TASKDATA=~/.config/taskwarrior/data
+
 # tmux
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_CONFIG='$HOME/.config/tmux/tmux.conf'
