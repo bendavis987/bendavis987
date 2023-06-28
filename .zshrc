@@ -117,6 +117,10 @@ ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_DEFAULT_SESSION_NAME=starchy
 ZSH_TMUX_FIXTERM=true
 
+# rust
+export RUSTUP_HOME=$HOME/.config/rust/.rustup
+export PATH=$HOME/.config/rust/.cargo/bin:$PATH
+export CARGO_HOME=$HOME/.config/rust/.cargo
 
 # startup commands
 curl "wttr.in/PGH?u0FAQ"

@@ -1,0 +1,7 @@
+# .gitignore for rust config
+
+## ignore .cargo and .rustup
+.cargo/*
+.rustup/*
+
+!.rustup/settings.toml
