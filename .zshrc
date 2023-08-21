@@ -104,7 +104,7 @@ alias tmuxsource="tmux source-file ~/.config/tmux/tmux.conf"
 
 # aliases for tmux sessions
 alias sshtwar="ssh -t dev@192.168.0.135 tmux attach -t twarrior"
-alias sshddev="ssh -t dev@192.168.0.135 tmux attach -t dev"
+alias sshdev="ssh -t dev@192.168.0.135 tmux attach -t dev"
 
 # taskwarrior
 export TASKRC=~/.config/taskwarrior/taskwarrior.cfg
@@ -127,5 +127,7 @@ export RUSTUP_HOME=$HOME/.config/rust/.rustup
 export PATH=$HOME/.config/rust/.cargo/bin:$PATH
 export CARGO_HOME=$HOME/.config/rust/.cargo
 
+# nvim
+alias v="nvim"
 # startup commands
 curl "wttr.in/PGH?u0FAQ"
