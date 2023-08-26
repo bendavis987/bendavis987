@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -104,11 +104,16 @@ alias tmuxsource="tmux source-file ~/.config/tmux/tmux.conf"
 
 # aliases for tmux sessions
 alias sshtwar="ssh -t dev@192.168.0.135 tmux attach -t twarrior"
-alias sshddev="ssh -t dev@192.168.0.135 tmux attach -t dev"
+alias sshdev="ssh -t dev@192.168.0.135 tmux attach -t dev"
 
-# aliases for moving configurations
+# taskwarrior
 export TASKRC=~/.config/taskwarrior/taskwarrior.cfg
 export TASKDATA=~/.config/taskwarrior/data
+
+alias tadd='task add +inbox'
+alias ta='task add'
+alias t='clear;task sync; task'
+alias tn='clear;task next'
 
 # tmux
 ZSH_TMUX_AUTOSTART=true
@@ -122,5 +127,7 @@ export RUSTUP_HOME=$HOME/.config/rust/.rustup
 export PATH=$HOME/.config/rust/.cargo/bin:$PATH
 export CARGO_HOME=$HOME/.config/rust/.cargo
 
+# nvim
+alias v="nvim"
 # startup commands
 curl "wttr.in/PGH?u0FAQ"

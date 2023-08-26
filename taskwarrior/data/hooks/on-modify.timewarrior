@@ -45,15 +45,11 @@ except AttributeError:
 
 def extract_tags_from(json_obj):
     # Extract attributes for use as tags.
-    tags = [json_obj['description']]
 
-    if 'project' in json_obj:
-        tags.append(json_obj['project'])
+    if 'project' not in json_obj:
+        return '\'\''
 
-    if 'tags' in json_obj:
-        tags.extend(json_obj['tags'])
-
-    return tags
+    return [json_obj['project']]
 
 
 def extract_annotation_from(json_obj):
