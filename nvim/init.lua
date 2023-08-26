@@ -42,10 +42,10 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.keymap.set({"i", "v"}, "m", "h")
-vim.keymap.set({"i", "v"}, "n", "j")
-vim.keymap.set({"i", "v"}, "i", "k")
-vim.keymap.set({"i", "v"}, "o", "l")
+vim.keymap.set({"n", "v"}, "m", "h")
+vim.keymap.set({"n", "v"}, "n", "j")
+vim.keymap.set({"n", "v"}, "i", "k")
+vim.keymap.set({"n", "v"}, "o", "l")
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
