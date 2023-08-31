@@ -62,7 +62,6 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
@@ -70,7 +69,35 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-
+  -- Ben's plugins in addition to kickstart
+   {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.summary"] = {}, -- Used to generate workspace summary.
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                journal = "~/documents/4_Archive/journal",
+                notes = "~/documents/0_Inbox/notes",
+                zettle = "~/documents/3_Resources/zettle",
+                work = "~/documents/2_Areas/work",
+                foss = "~/documents/2_Areas/foss",
+                nvim = "~/.config/nvim"
+              },
+              index = "index.norg",
+              open_last_workspace = true,
+            },
+          },
+        },
+      }
+    end,
+  },
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
